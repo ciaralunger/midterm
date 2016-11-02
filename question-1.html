@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Question 1</title>
+</head>
+
+<!-- jsbin link: http://jsbin.com/giparugeqo/edit?html,js,output -->
+
+<!-- // Make an AJAX call to http://itp-api.herokuapp.com/api/v1/me and render the user's first name
+  // and last name in a span with a class of "fullname" using Handlebars. Also render the list of
+  // open source projects in an unordered list. The `isAdmin` flag is a boolean that randomly changes.
+  // If isAdmin is true, render 'Admin' next to the name. Otherwise, just render 'Not Admin' next
+  // to the name.
+  // Dont forget to run a local server when building this.
+  // cd into this directory and run php -S localhost:8000 and navigate to localhost:8000/question-1.html -->
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/
+handlebars.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<script type = "template/handlebars" id="user-template">
+    {{#each data}}
+    <span class = "fullname">{{firstName}} {{lastName}} </span>
+    {{#if isAdmin}}
+       Admin
+    {{else}}
+       Not admin
+    {{/if}}
+    
+    <ul>
+    <li>{{openSourceProjects.[0].name}}</li>
+    <li>{{openSourceProjects.[1].name}}</li>
+    <li>{{openSourceProjects.[2].name}}</li>
+    <li>{{openSourceProjects.[3].name}}</li>
+    <li>{{openSourceProjects.[4].name}}</li>
+    </ul>
+    
+    {{/each}}
+</script>
+  
+<div id = "object"></div>
+
+</body>
+</html>
